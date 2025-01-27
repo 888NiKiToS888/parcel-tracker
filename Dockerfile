@@ -8,4 +8,5 @@ RUN go build -o final-ci-cd .
 FROM alpine:latest
 WORKDIR /app
 COPY --from=builder /app/final-ci-cd .
+COPY tracker.db /app/tracker.db 
 CMD ["./final-ci-cd"]
